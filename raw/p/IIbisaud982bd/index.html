@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Test 0x0x6</title>
+        <script src="Hyphenopoly_Loader.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+        <script>
+        Hyphenopoly.config({
+            require: {
+                "as": "FORCEHYPHENOPOLY",
+                "be": "FORCEHYPHENOPOLY",
+                "fr": "FORCEHYPHENOPOLY",
+                "it": "FORCEHYPHENOPOLY",
+                "el-monoton": "FORCEHYPHENOPOLY",
+                "el-polyton": "FORCEHYPHENOPOLY",
+                "es": "FORCEHYPHENOPOLY",
+                "hi": "FORCEHYPHENOPOLY",
+                "hy": "FORCEHYPHENOPOLY",
+                "ka": "FORCEHYPHENOPOLY",
+                "en-us": "FORCEHYPHENOPOLY",
+                "mk": "FORCEHYPHENOPOLY",
+                "ml": "FORCEHYPHENOPOLY",
+                "mn-cyrl": "FORCEHYPHENOPOLY",
+                "mr": "FORCEHYPHENOPOLY",
+                "or": "FORCEHYPHENOPOLY",
+                "pa": "FORCEHYPHENOPOLY",
+                "ru": "FORCEHYPHENOPOLY",
+                "sr-cyrl": "FORCEHYPHENOPOLY",
+                "ta": "FORCEHYPHENOPOLY",
+                "te": "FORCEHYPHENOPOLY",
+                "th": "FORCEHYPHENOPOLY",
+                "uk": "FORCEHYPHENOPOLY",
+                "af": "FORCEHYPHENOPOLY",
+                "ca": "FORCEHYPHENOPOLY",
+                "cs": "FORCEHYPHENOPOLY",
+                "cy": "FORCEHYPHENOPOLY",
+                "da": "FORCEHYPHENOPOLY",
+                "de": "FORCEHYPHENOPOLY",
+                "en-gb": "FORCEHYPHENOPOLY",
+                "en-us": "FORCEHYPHENOPOLY",
+                "eo": "FORCEHYPHENOPOLY",
+                "es": "FORCEHYPHENOPOLY",
+                "et": "FORCEHYPHENOPOLY",
+                "eu": "FORCEHYPHENOPOLY",
+                "fi": "FORCEHYPHENOPOLY",
+                "fr": "FORCEHYPHENOPOLY",
+                "fur": "FORCEHYPHENOPOLY",
+                "ga": "FORCEHYPHENOPOLY",
+                "hr": "FORCEHYPHENOPOLY",
+                "hsb": "FORCEHYPHENOPOLY",
+                "hu": "FORCEHYPHENOPOLY",
+                "ia": "FORCEHYPHENOPOLY",
+                "id": "FORCEHYPHENOPOLY",
+                "is": "FORCEHYPHENOPOLY",
+                "it": "FORCEHYPHENOPOLY",
+                "kmr": "FORCEHYPHENOPOLY",
+                "la": "FORCEHYPHENOPOLY",
+                "lt": "FORCEHYPHENOPOLY",
+                "lv": "FORCEHYPHENOPOLY",
+                "nb": "FORCEHYPHENOPOLY",
+                "nl": "FORCEHYPHENOPOLY",
+                "oc": "FORCEHYPHENOPOLY",
+                "pi": "FORCEHYPHENOPOLY",
+                "pl": "FORCEHYPHENOPOLY",
+                "pms": "FORCEHYPHENOPOLY",
+                "pt": "FORCEHYPHENOPOLY",
+                "rm": "FORCEHYPHENOPOLY",
+                "ro": "FORCEHYPHENOPOLY",
+                "sk": "FORCEHYPHENOPOLY",
+                "sl": "FORCEHYPHENOPOLY",
+                "sq": "FORCEHYPHENOPOLY",
+                "sr-latn": "FORCEHYPHENOPOLY",
+                "sv": "FORCEHYPHENOPOLY",
+                "tk": "FORCEHYPHENOPOLY",
+                "tr": "FORCEHYPHENOPOLY",
+                "zh-latn-pinyin": "FORCEHYPHENOPOLY"
+            },
+            setup: {
+                selectors: {
+                    "#drBrdnkABub": {
+                        hyphen: "-",
+                        minWordLength: 1
+                    }
+                }
+            },
+            handleEvent: {
+                hyphenopolyEnd: function (e) {
+                    assert();
+                }
+            }
+        });
+        function assert() {
+            var tests = 23;
+            var i = 1;
+            var test = "";
+            var ref = "";
+            var result = true;
+            while (i <= tests) {
+                test = document.getElementById("test" + i).innerHTML;
+                ref = document.getElementById("ref" + i).innerHTML;
+                if (test === ref) {
+                    document.getElementById("result").innerHTML += "<span style=\"background-color: #d6ffd6\">" + (function (i) {
+                        return (i < 10) ? "0" + i : i; 
+                    }(i)) + "</span> ";
+                    result = result && true;
+                } else {
+                    document.getElementById("result").innerHTML += "<span style=\"background-color: #ffd6d6\">" + i + "</span> ";
+                    result = false;
+                }
+                i += 1;
+            }
+            if (parent != window) {
+                parent.postMessage(JSON.stringify({
+                    desc: document.getElementById("desc").innerHTML,
+                    index: 6,
+                    result: (result ? "passed" : "failed")
+                }), window.location.href);
+            }
+        }
+        </script>
+        <style type="text/css">
+            body {
+                width:100%;
+                margin:0;
+            }
+
+            .test {
+                background-color: #D8E2F9;
+            }
+            .ref {
+                background-color: #FEEFC0;
+            }
+            
+            button {
+              width: 304px;
+              height: 50px;
+              background: white;
+              box-shadow: 2px 2px #2e6da4;
+              outline: darkred;
+              border: 1px solid darkred;
+              position: absolute;
+              top: 32px;
+              left: 30px;
+              right: 0;
+              font-size: 1.3rem;
+              font-weight: lighter;
+              font-family: "Times New Roman";
+              /*! text-align: center; */
+            }
+            button:active {
+              width: 304px;
+              height: 50px;
+              background: white;
+              box-shadow: none;
+              outline: darkred;
+              border: 1px solid darkred;
+              position: absolute;
+              top: 34px;
+              left: 32px;
+              right: 0;
+            }
+            
+            #drBrdnkABub {
+                width: calc(100% - 370px);
+                min-height: 578px;
+                color: #416a44;
+                float: right;
+                margin-right: 4px;
+                margin-top: 6px;
+            }
+            .custom-combobox {
+                position: relative;
+                display: inline-block;
+            }
+            .custom-combobox-toggle {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin-left: -1px;
+                padding: 0;
+            }
+            .custom-combobox-input {
+                margin: 0;
+                padding: 5px 10px;
+            }
+            .selectL {
+                top: 178px;
+                left: 10px;
+                position: absolute;
+                width: 340px;
+                line-height: 1.3;
+            }
+            
+            .selectL .custom-combobox input {
+              border-radius: 0;
+              background: #150f15;
+              color: #c8c8c8;
+            }
+            .selectL .custom-combobox .ui-button {
+              border-radius: 0;
+              background: #793893;
+            }
+            .selectL .custom-combobox .ui-button-icon {
+              color: #52c6c6;
+              background-image: none;
+              outline: none;
+              background-image: url("images/ui-icons_555555_256x240.png");
+            }
+            .selectL svg {
+                position: absolute;
+                right: 30px;
+                z-index: 2;
+                bottom: 5px;
+                pointer-events: none;
+                stroke: aqua;
+            }
+            .selectL .custom-combobox .ui-button:active {
+                border: 1px solid #ecc9c9;
+            }
+            .ui-menu-item {
+                background: #6dd77d;
+                color: #f2f222;
+            }
+            .ui-widget-content .ui-state-active {
+              background: #150f15;
+              color: #c8c8c8;
+            }
+            hr{
+                border: double 3px #f738;
+                width: 100%;
+                float: right;
+                margin-right: 4px;
+            }
+            .ui-menu{
+              max-height: calc(100% - 260px);
+              overflow-y: scroll; 
+              overflow-x: hidden;<
+            }
+        </style>
+        <script>
+          $( function() {
+            $.widget( "custom.combobox", {
+              _create: function() {
+                this.wrapper = $( "<span>" )
+                  .addClass( "custom-combobox" )
+                  .insertAfter( this.element );
+         
+                this.element.hide();
+                this._createAutocomplete();
+                this._createShowAllButton();
+              },
+         
+              _createAutocomplete: function() {
+                var selected = this.element.children( ":selected" ),
+                  value = selected.val() ? selected.text() : "";
+         
+                this.input = $( "<input>" )
+                  .appendTo( this.wrapper )
+                  .val( value )
+                  .attr( "title", "" )
+                  .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
+                  .autocomplete({
+                    delay: 0,
+                    minLength: 0,
+                    source: this._source.bind( this ),
+                    select: function( event, ui ) {$(drBrdnkABub).attr("lang", ui.item.option.value)}
+                  })
+                  .tooltip({
+                    classes: {
+                      "ui-tooltip": "ui-state-highlight"
+                    }
+                  });
+         
+                this._on( this.input, {
+                  autocompleteselect: function( event, ui ) {
+                    ui.item.option.selected = true;
+                    this._trigger( "select", event, {
+                      item: ui.item.option
+                    });
+                  },
+         
+                  autocompletechange: "_removeIfInvalid"
+                });
+              },
+         
+              _createShowAllButton: function() {
+                var input = this.input,
+                  wasOpen = false;
+         
+                $( "<a>" )
+                  .attr( "tabIndex", -1 )
+                  .attr( "title", "Show All Items" )
+                  .tooltip()
+                  .appendTo( this.wrapper )
+                  .button({
+                    icons: {
+                      primary: "ui-icon-triangle-1-s"
+                    },
+                    text: false
+                  })
+                  .removeClass( "ui-corner-all" )
+                  .addClass( "custom-combobox-toggle ui-corner-right" )
+                  .on( "mousedown", function() {
+                    wasOpen = input.autocomplete( "widget" ).is( ":visible" );
+                  })
+                  .on( "click", function() {
+                    input.trigger( "focus" );
+         
+                    // Close if already visible
+                    if ( wasOpen ) {
+                      return;
+                    }
+         
+                    // Pass empty string as value to search for, displaying all results
+                    input.autocomplete( "search", "" );
+                  });
+              },
+         
+              _source: function( request, response ) {
+                var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+                response( this.element.children( "option" ).map(function() {
+                  var text = $( this ).text();
+                  if ( this.value && ( !request.term || matcher.test(text) ) )
+                    return {
+                      label: text,
+                      value: text,
+                      option: this
+                    };
+                }) );
+              },
+         
+              _removeIfInvalid: function( event, ui ) {
+         
+                // Selected an item, nothing to do
+                if ( ui.item ) {
+                  return;
+                }
+         
+                // Search for a match (case-insensitive)
+                var value = this.input.val(),
+                  valueLowerCase = value.toLowerCase(),
+                  valid = false;
+                this.element.children( "option" ).each(function() {
+                  if ( $( this ).text().toLowerCase() === valueLowerCase ) {
+                    this.selected = valid = true;
+                    return false;
+                  }
+                });
+         
+                // Found a match, nothing to do
+                if ( valid ) {
+                  return;
+                }
+         
+                // Remove invalid value
+                this.input
+                  .val( "" )
+                  .attr( "title", value + " didn't match any item" )
+                  .tooltip( "open" );
+                this.element.val( "" );
+                this._delay(function() {
+                  this.input.tooltip( "close" ).attr( "title", "" );
+                }, 2500 );
+                this.input.autocomplete( "instance" ).term = "";
+              },
+         
+              _destroy: function() {
+                this.wrapper.remove();
+                this.element.show();
+              }
+            });
+         
+            $( "#combobox" ).combobox();
+            $( "#toggle" ).on( "click", function() {
+              $( "#combobox" ).toggle();
+            });
+          } );
+          </script>
+    </head>
+    <body>
+
+        <button>Separar por sílabas</button>
+        <div class="selectL ui-widget">
+          <label>⸘En qué lenguaje quieres separar con guiones por sílabas⁉ </label><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+<title>select-arrows</title>
+<path d="M10 1l-5 7h10l-5-7zM10 19l5-7h-10l5 7z"></path>
+</svg>
+
+
+          <select id="combobox">
+                <option value>Selecciona uno...</option>
+                <option value="as">idioma asamés</option>
+                <option value="be">bielorruso</option>
+                <option value="fr">francés</option>
+                <option value="it">italiano</option>
+                <option value="el-monoton">griego monotónico</option>
+                <option value="el-polyton">griego politónico</option>
+                <option value="es">español</option>
+                <option value="hi">hindi</option>
+                <option value="hy">idioma armenio</option>
+                <option value="ka">georgiano </option>
+                <option value="mk">idioma macedonio</option>
+                <option value="ml">malabar</option>
+                <option value="mn-cyrl"> idioma mongol cirílico</option>
+                <option value="mr">marati</option>
+                <option value="or">oriya</option>
+                <option value="pa">panyabí</option>
+                <option value="ru">idioma ruso</option>
+                <option value="sr-cyrl">serbio cirílico</option>
+                <option value="ta">tamil</option>
+                <option value="te">télugu</option>
+                <option value="th">tailandés</option>
+                <option value="uk">idioma ucraniano</option>
+                <option value="af">afrikáans</option>
+                <option value="ca">catalán</option>
+                <option value="cs">idioma checo</option>
+                <option value="cy">galés</option>
+                <option value="da">danés</option>
+                <option value="de">idioma alemán</option>
+                <option value="en-gb">inglés británico</option>
+                <option value="en-us">inglés americano</option>
+                <option value="eo">esperanto</option>
+                <option value="et">idioma estonio</option>
+                <option value="eu">euskera</option>
+                <option value="fi">finés</option>
+                <option value="ga">irlandés</option>
+                <option value="hr">idioma croata</option>
+                <option value="hu">eslavo</option>
+                <option value="ia">interlingua</option>
+                <option value="id">indonesio</option>
+                <option value="is">islandés</option>
+                <option value="la">latín</option>
+                <option value="lt">idioma lituano</option>
+                <option value="lv">lengua letona</option>
+                <option value="nb">noruego bokmål</option>
+                <option value="nl">noruego nynorsk</option>
+                <option value="oc">occitano</option>
+                <option value="pi">pali</option>
+                <option value="pl">idioma polaco</option>
+                <option value="pt">idioma portugués</option>
+                <option value="rm">romanche</option>
+                <option value="ro">rumano</option>
+                <option value="sk">eslovaco</option>
+                <option value="sl">idioma esloveno</option>
+                <option value="sq">albanés</option>
+                <option value="sr-latn">serbio latino</option>
+                <option value="sv">sueco</option>
+                <option value="tk">turcomano</option>
+                <option value="tr">idioma turco</option>
+                <option value="zh-latn-pinyin">idioma chino hànyǔ pīnyīn</option>
+          </select>
+        </div>
+        <div contenteditable="true" id="drBrdnkABub"></div>
+        <hr>
+        <script>
+            $("button:first-child").on("click", function(){
+                Hyphenopoly.main()
+            })
+        </script>
+    </body>
+</html>

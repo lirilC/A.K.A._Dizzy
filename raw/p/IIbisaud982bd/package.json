@@ -1,0 +1,85 @@
+{
+  "name": "hyphenopoly",
+  "version": "5.0.0",
+  "description": "Hyphenation for node and Polyfill for client-side hyphenation.",
+  "keywords": [
+    "hyphenation",
+    "html",
+    "polyfill",
+    "hyphens",
+    "hyphen",
+    "soft",
+    "hyphenate",
+    "JavaScript",
+    "wasm",
+    "Webassembly"
+  ],
+  "homepage": "https://mnater.github.io/Hyphenopoly/",
+  "bugs": "https://github.com/mnater/Hyphenopoly/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Mathias Nater",
+    "email": "mathiasnater@gmail.com"
+  },
+  "files": [
+    "Hyphenopoly_Loader.js",
+    "Hyphenopoly.js",
+    "patterns/",
+    "min/Hyphenopoly_Loader.js",
+    "min/Hyphenopoly.js",
+    "min/patterns/",
+    "examples/example.js",
+    "examples/example.html",
+    "!.DS_Store"
+  ],
+  "main": "hyphenopoly.module.js",
+  "type": "module",
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mnater/Hyphenopoly"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "all-contributors-cli": "^6.24.0",
+    "c8": "^7.12.0",
+    "assemblyscript": "^0.25.2",
+    "eslint": "^8.31.0",
+    "eslint-plugin-security": "^1.5.0",
+    "remark-cli": "^11.0.0",
+    "remark-lint-no-consecutive-blank-lines": "^4.1.2",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "tap": "^16.3.2",
+    "terser": "^5.16.1",
+    "typescript": "4.9.4",
+    "yaml": "^2.2.1"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      "remark-lint-no-consecutive-blank-lines"
+    ]
+  },
+  "c8": {
+    "reporter": ["lcov", "text"],
+    "reports-dir": ".c8/"
+  },
+  "scripts": {
+    "preinstall3rdparty": "rm -fR third-party",
+    "install3rdparty": "git clone https://github.com/WebAssembly/binaryen.git third-party/binaryen",
+    "postinstall3rdparty": "cd ./third-party/binaryen/ && cmake . && make",
+    "createWasmForLang": "sh ./tools/createWasmForLang.sh en-us",
+    "createAllWasm": "sh ./tools/createAllWasm.sh",
+    "pretest": "npm run lint",
+    "test": "c8 tap --no-cov test/*.js",
+    "testsuite": "open http://127.0.0.1/~mnater/Hyphenopoly/testsuite/ && open http://127.0.0.1/~mnater/Hyphenopoly/min/testsuite/",
+    "lint": "eslint Hyphenopoly_Loader.js Hyphenopoly.js hyphenopoly.module.js test/*.js src/*.ts && remark -q *.md && remark -q */*.md",
+    "prepare": "sh ./tools/minify.sh",
+    "beforeRelease": "npm run prepare && cp -R ./min ./docs/ && cp ./examples/example.html ./docs/min/ && cp -R ./examples/webpack/dist ./docs/",
+    "doc": "cd ./docs/ && bundle exec jekyll serve -l -o"
+  },
+  "runkitExampleFilename": "examples/example.js"
+}
