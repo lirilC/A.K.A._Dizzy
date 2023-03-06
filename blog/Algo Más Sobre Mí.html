@@ -9,7 +9,6 @@
         Algo Más Sobre Mí | Blogs | Luis Eduardo Gallego García | liril
     </title>
     <link rel="shortcut icon" type="image/ico" href="/resources/icons/favicon.ico" />
-    <link rel="stylesheet" href="https://use.typekit.net/jdc1nzq.css">
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/css/article/style.css">
@@ -26,6 +25,7 @@
     <script src="/js/video.js"></script>
     <script src="/js/jquery.knob.js">
     </script>
+    <link href="https://fonts.cdnfonts.com/css/open-sans" rel="stylesheet">
     <script type="text/javascript" src="https://milankyncl.github.io/jquery-copy-to-clipboard/jquery.copy-to-clipboard.js"></script>
     <script>
         $(function ($) {
@@ -342,6 +342,79 @@
                 <section id="help_secTion"></section>
                 <div class="pseudoSendBuTton"></div>
             </aside>
+            <aside id="full_TextTextToSpeech">
+                <h3>Pronunciar texto</h3>
+                <div class="pRonunciationLenguage ui-widget">
+                  <label>Elige un lenguaje en el cual pronunciar </label>
+                    <select id="combobox1">
+                        <option value>Selecciona uno...</option>
+                        <option value= "af">Afrikáans</option>
+                        <option value= "sq">Albanés</option>
+                        <option value= "de">Alemán</option>
+                        <option value= "ar">Árabe</option>
+                        <option value= "bn">Bengalí</option>
+                        <option value= "my">Birmano</option>
+                        <option value= "bs">Bosnio</option>
+                        <option value= "bg">Búlgaro</option>
+                        <option value= "km">Camboyano</option>
+                        <option value= "kn">Canarés</option>
+                        <option value= "ca">Catalán</option>
+                        <option value= "cs">Checho</option>
+                        <option value= "zh-CN">Chino (simplificado)</option>
+                        <option value= "zh-TW">Chino (tradicional)</option>
+                        <option value= "si">Cingalés</option>
+                        <option value= "ko">Coreano</option>
+                        <option value= "hr">Croata</option>
+                        <option value= "da">Danés</option>
+                        <option value= "sk">Eslovaco</option>
+                        <option value= "es-ES">Español de España</option>
+                        <option value= "es-419">Español latinoamericano</option>
+                        <option value= "et">Estonio</option>
+                        <option value= "fi">Finlandés</option>
+                        <option value= "fr">Francés</option>
+                        <option value= "el">Griego</option>
+                        <option value= "gu">Gujarati</option>
+                        <option value= "iw">Hebreo</option>
+                        <option value= "hi">Hindi</option>
+                        <option value= "nl">Neerlandés</option>
+                        <option value= "hu">Húngaro</option>
+                        <option value= "id">Indonesio</option>
+                        <option value= "en-US">Inglés americano</option>
+                        <option value= "en-AU">Inglés australiano</option>
+                        <option value= "en-GB">Inglés británico</option>
+                        <option value= "en-CA">Inglés canadiense</option>
+                        <option value= "is">Islandés</option>
+                        <option value= "it">Italiano</option>
+                        <option value= "ja">Japonés</option>
+                        <option value= "jw">Javanés</option>
+                        <option value= "la">Latín</option>
+                        <option value= "lv">Letón</option>
+                        <option value= "ml">Malayalam</option>
+                        <option value= "ms">Malayo</option>
+                        <option value= "mr">Maratí</option>
+                        <option value= "ne">Nepalí</option>
+                        <option value= "no">Noruego</option>
+                        <option value= "pl">Polaco</option>
+                        <option value= "pt">Portugués</option>
+                        <option value= "ro">Rumano</option>
+                        <option value= "ru">Ruso</option>
+                        <option value= "sr">Serbio</option>
+                        <option value= "sw">Suajili</option>
+                        <option value= "sv">Sueco</option>
+                        <option value= "su">Sundanés</option>
+                        <option value= "tl">Tagalo</option>
+                        <option value= "th">Tailandés</option>
+                        <option value= "ta">Tamil</option>
+                        <option value= "te">Telugu</option>
+                        <option value= "tr">Turco</option>
+                        <option value= "uk">Ucraniano</option>
+                        <option value= "ur">Urdu</option>
+                        <option value= "vi">Vietnamita</option>
+                    </select>
+                </div>
+                <div class="pseudoBuTton1"></div>
+                <textarea placeholder="Texto para sintetizar" cols="30" rows="3"></textarea>
+            </aside>
         </section>
         <audio controls id="tts-audio"></audio>
     </div>
@@ -376,7 +449,7 @@
                     </p>
                 </video>
             </section>
-            <p><i>&nbsp&nbsp&nbsp&nbspTambién he agregado algunas opciones de accesibilidad, más que todo para que sepas cómo se pronuncian cosas en un lenguaje que no hables; simplemente selecciona cualquier texto y luego presiona Control + Alt + A, en el diálogo que aparecerá, selecciona el lenguaje en el que quieres pronunciar (también puedes buscar uno en el cuadro de entrada) y presiona el botón de reproducir para escuchar como se pronuncia el texto que seleccionaste en el lenguaje que elegiste.</i></p>
+            <p><i>&nbsp&nbsp&nbsp&nbspTambién he agregado algunas opciones de accesibilidad, más que todo para que sepas cómo se pronuncian cosas en un lenguaje que no hables; simplemente selecciona cualquier texto y luego presiona Control + Alt + A, en el diálogo que aparecerá, selecciona el lenguaje en el que quieres pronunciar (también puedes buscar uno en el cuadro de entrada) y presiona el botón de reproducir para escuchar como se pronuncia el texto que seleccionaste en el lenguaje que elegiste. O presiona Control + Alt + W para abrir una un síntetizador de voz para para muchos lenguajes con un cuadro de entrada de texto, que por ahora tiene un límite de longitud del texto.</i></p>
             <section class="video">
                 <div class="Enlarge">
                 </div>
