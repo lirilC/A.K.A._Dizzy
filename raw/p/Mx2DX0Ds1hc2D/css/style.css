@@ -1,0 +1,23 @@
+body{
+    font-family: "Open Sans";
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: 8em
+}
+td,
+th {
+  padding: 0 3px;
+}
+table th:first-child {
+  font-weight: normal;
+  color: #232303cf;
+  border: 1px solid;
+}
+table th:last-child {
+  font-weight: lighter;
+  color: #232303;
+  font-style: oblique;
+  border-bottom: 1px dashed;
+}
