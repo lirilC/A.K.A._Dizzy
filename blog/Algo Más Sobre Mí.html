@@ -707,10 +707,31 @@
         $(this).siblings("pre").scrollLeft($(this).scrollLeft());
     });
     $('.code pre').on('scroll', function() {
-                    <p w="ddhsp0 dansslcl1p0 ddneolyf1p0">→←Luis Eduardo Gallego García Echeverri Arias Ruiz Cardona (todo en conjunto, derecho, <i>por letras, el sonido que hacen</i> en español, luego las palabras que queden detrás de la última, derecho, cada una al revés, <i>por letras, su nombre en el abecedario</i> en español, y luego la primera palabra derecho, <i>por letras, su nombre en el abecedario</i> en inglés; todo sin pausas entre letra y letra más que en los espacios y signos de puntuación) (<span title="<i>Letras, su nombre en el abecedario</i> en Español"><i>c&nbsp;o&nbsp;l&nbsp;o&nbsp;m&nbsp;b&nbsp;i&nbsp;a</i></span>  <span title="<i>Letras, su nombre en el abecedario</i> en Inglés"><i>b&nbsp;i&nbsp;a  l&nbsp;o&nbsp;m  c&nbsp;o</i></span>)</p>
         $(this).siblings(".code-scroll").scrollLeft($(this).scrollLeft());
 
     });
+    $("p").filter(function(){if($(this).attr("w") != undefined){return true}else{return false}}).each(function(){
+        $(this).attr("oW", $(this).attr("w"))
+    })
+    $("p").filter(function(){if($(this).attr("w") != undefined){return true}else{return false}}).before(`<div class= "edit"><input></input><button class= "redo"></button><button class= "primary"></button></div>`)
+    $(".edit input").on("input", function(){
+        $(this).attr("title", $(this).val())
+        $(this).parent().next().attr("w", $(this).val())
+    })
+    $(".edit button.primary").on("mouseup", function(){
+        if(!$(this).parent().is(".shifted")){
+            $(this).parent().next().attr("w", $(this).parent().next().attr("oW"))
+            $(this).parent().find("input").val("")
+        }else{
+            localStorage.setItem(`${alternatives.id}$_${$(this).parent().index()}`, $(this).parent().find("input").val())
+        }
+    })
+    $(".redo").on("click", function(){
+        if(localStorage.getItem(`${alternatives.id}$_${$(this).parent().index()}`) != null){
+            $(this).parent().find("input").val(localStorage.getItem(`${alternatives.id}$_${$(this).parent().index()}`))
+            $(this).parent().find("input").trigger("input")
+        }
+    })
     typeof videojs != "undefined"? (function(){ 
         $(".Playuse").click(function(i){ 
             $(i.target).parent().find("video")[0].play(); 
@@ -722,6 +743,14 @@
         });
         
         videojs("noOIid").on("play", function(i){ 
+            //console.log(i)
+            $(videojs(i.target.parentElement.id).L.parentElement).siblings().filter(".Playuse").addClass("playing"); 
+        });
+        videojs("ConoU2").on("pause", function(i){ 
+            $(videojs(i.target.parentElement.id).L.parentElement).siblings().filter(".Playuse").removeClass("playing"); 
+        });
+        
+        videojs("ConoU2").on("play", function(i){ 
             //console.log(i)
             $(videojs(i.target.parentElement.id).L.parentElement).siblings().filter(".Playuse").addClass("playing"); 
         });
