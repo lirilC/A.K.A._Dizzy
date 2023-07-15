@@ -1484,7 +1484,8 @@
             $(this).parent().find("input").val(localStorage.getItem(`${alternatives.id}$_${$(this).parent().index()}`))
             $(this).parent().find("input").trigger("input")
         }
-    })
+    });
+    delete blog_special;
     </script>
 </body>
 </html>
