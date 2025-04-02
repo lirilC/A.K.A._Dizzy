@@ -876,3 +876,25 @@
 <!--`_-->
 <!--`_-->
                     <!--canica en hielo, (falda(?))-->
+
+<!--
+setTimeout(function(){
+ui= alternate;
+alternate= ()=>{
+	ui()
+	document.querySelectorAll(".poema p").forEach(p=>{
+p.setAttribute("sw", p.getAttribute("w").split(" ").map((w)=>{
+	return w.slice(4, w.length) + w.slice(0, 4)  
+}).join("<b>|</b>").replaceAll("p0", "").replaceAll("oly", "").replaceAll("slc", "s").replaceAll("dd", "d").replaceAll("ia", "a"));
+p.innerHTML= `<small style="color: inherit; font-size: 0.7em;">${p.getAttribute("sw")}</small><span style="display:none"> ()</span>${p.innerHTML.slice(p.innerHTML.lastIndexOf(" ("), p.innerHTML.length)}`;
+$(p).tooltip()
+})	
+}
+},7000)
+
+
+
+
+
+//Puedes inyectar este código con una extensión como Code Injector a la página del blog, o abrir la página y ejecutar el código desde la consola (F12->Buscas consola y lo pegas [Tal vez tengas que escribir "permitir pegar" o algo por el estilo la primera vez que uses la consola para pegar código (Has esto con cuidado en el futuro)])
+-->
