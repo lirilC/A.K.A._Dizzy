@@ -1079,7 +1079,7 @@ alternate= ()=>{
 	document.querySelectorAll(".poema p").forEach(p=>{
 p.setAttribute("sw", p.getAttribute("w").split(" ").map((w)=>{
 	return w.slice(4, w.length) + w.slice(0, 4)  
-}).join("<b>|</b>").replaceAll("p0", "").replaceAll("oly", "").replaceAll("slc", "s").replaceAll("dd", "d").replaceAll("ia", "a"));
+}).join("<b>|</b>").replaceAll("p0", "").replaceAll("oly", "").replaceAll("slc", "s").replaceAll("dd", "d").replaceAll("ia", "a").replaceAll("sf1", "ep").replaceAll("sl1", "eú").replaceAll("f1", "p").replaceAll("l1", "ú").replaceAll("he", "hi").replaceAll("hs", "he").replaceAll("ps", "p").replaceAll("ss", "s"));
 p.innerHTML= `<small style="color: inherit; font-size: 0.7em;">${p.getAttribute("sw")}</small><span style="display:none"> ()</span>${p.innerHTML.slice(p.innerHTML.lastIndexOf(" ("), p.innerHTML.length)}`;
 $(p).tooltip()
 })	
