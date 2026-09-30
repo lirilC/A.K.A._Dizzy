@@ -435,6 +435,8 @@
             <p>Cuando yo era muy chiquito, yo era muy lindo hasta la chimba, entonces la Nación de Colombia decidió que yo tenía que ser virgen <span class= "tiTle" title= '"hasta los veinte, el día de tu cumpleaños número ventiuno"'>hasta los veinte, el día de mi cumpleaños número ventiuno</span> <i>(No se sientan mal por mí, yo tengo lo que se dice <a target="_blank" href="/A.K.A._Dizzy/blog/xWo3">todo el f**king ganado</a> ;))</i>; ese día iba a perder la virginidad con la mujer que yo quisiera, de todas las mujeres que habitan el planeta Tierra, y después me las tenía que comer a todas literal, literal, por lanarizqueunelosespíritus, que es mi pe*e y se llama lanarizqueunelosespíritus "porque todas se lo quieren ch*par, y metérselo por el an*, y que Luis les de hasta que sangren, y que les llene de s*men la v*gina, y que las haga trag*rselo todo", por eso se llama lanarizqueunelosespíritus, y causa post traumatic stress disorder; jurar por lanarizqueunelosespíritus es como jurar por Dios, eso significa literal, literal, lo que significa realmente; una por una o de a dos o de a tres, o de a cuatro o de a cinco o de a seis; todas y cada una de las mujeres que habitan el planeta Tierra.</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Las personas que eran <span class= "quoTe" title= "Cito">ricas, ricas hasta la chimba</span> empezaron a decirme "Cuídeme a las niñas", y los que eran demasiado más ricos, "Take care of the ladies for me".</p>
             <br>
+            <p>En este momento la opción de edición de algoritmos está deshabilitada, en mi opinión todos están perfectos. Nadie estuvo en capacidad de decir cuando eran <i>"los veint...número veintiuno"</i> pero ya pasaron. <i>Atención a las observaciones</i>.</p>
+            <br>
             <p><i>&nbsp;&nbsp;&nbsp;&nbsp;Puedes alternar los títulos teniendo presionada la tecla Control y dando click en éstos. Y también puedes tener presionadas las teclas Control + Shift y dar click a los títulos para cambiarlos por cualquiera que tu quieras, pero asegúrate de conservar el formato "Casandra (ca-san-dra)"; luego, presiona la barra de tareas (donde está el botón de Inicio en Windows, por ejemplo) donde no hayan programas ni accesorios; o de nuevo puedes tener presionadas las teclas Control + Shift y dar click en el título.</i></p>
             <section class="video">
                 <div class="Enlarge">
@@ -473,6 +475,7 @@
             <a class="link" target="_blank" href="https://www.evernote.com/shard/s413/sh/eb6d9525-e806-4b55-17ee-bf2d6a73304a/3b39f916e4708a4a56cb02afe6a30649"><span class="Title">Separador por sílabas en español </span><span class="linktype">Nota De Evernote</span></a>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Aquí hay un, no muy preciso, separador por sílabas para muchos lenguajes: <br><br><i>These patterns find 89% of the hyphens in a pocket dictionary word list, with essentially no error. <br>-Franklin Mark Liang <span class= "tiTle" title= '<i>Doctor of Philosophy</i>'>Ph.D</span></i></p>
             <a class="link" target="_blank" href="/A.K.A._Dizzy/raw/p/IIbisaud982bd/index.html"><span class="Title">/A.K.A._Dizzy/raw/p/[Hyphenator]/index.html </span><span class="linktype">Proyecto</span></a>
+            <br>
             <br>
             <br>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Todos los países, departamentos (estados) y ciudades del planeta Tierra tienen un "Take care of the ladies for me" y un "Cuídeme a las niñas", así:</p>
@@ -747,7 +750,7 @@
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Todos los productos de las empresas, y los negocios de por ahí tienen un "Cuídeme a las niñas", así:</p>
             <p><i>Leyendo <i>por palabras</i> y <i>por sílabas</i> siempre se pronuncia en español.</i></p>
             <p><i>Ten en cuenta que no debes deletrear sin pausas entre letra y letra más que en los espacios y signos de puntuación cuando no se requiera así.</i></p>
-            <p><i>Algunos productos de esta lista pueden pertenecer realmente a la lista de los que están al revés o viceversa</i></p>
+            <p><i>Algunos productos de esta lista pueden pertenecer realmente a la lista de los que están al revés o viceversa. Algunos productos de cualquiera de las listas siguientes podría tener su nombre incorrecto o incompleto. Editar a discreción o usar ejemplos propios.</i></p>
             <div class="oculto">
                 <a class="revelar">Mostrar el texto oculto.</a>
             </div>
@@ -916,19 +919,7 @@
     $("p").filter(function(){if($(this).attr("w") != undefined){return true}else{return false}}).each(function(){
         $(this).attr("oW", $(this).attr("w"))
     })
-    $("p").filter(function(){if($(this).attr("w") != undefined){return true}else{return false}}).before(`<div class= "edit"><input></input><button class= "redo"></button><button class= "primary"></button></div>`)
-    $(".edit input").on("input", function(){
-        $(this).attr("title", $(this).val())
-        $(this).parent().next().attr("w", $(this).val())
-    })
-    $(".edit button.primary").on("mouseup", function(){
-        if(!$(this).parent().is(".shifted")){
-            $(this).parent().next().attr("w", $(this).parent().next().attr("oW"))
-            $(this).parent().find("input").val("")
-        }else{
-            localStorage.setItem(`${alternatives.id}$_${$(this).parent().index()}`, $(this).parent().find("input").val())
-        }
-    })
+    
     $(".redo").on("click", function(){
         if(localStorage.getItem(`${alternatives.id}$_${$(this).parent().index()}`) != null){
             $(this).parent().find("input").val(localStorage.getItem(`${alternatives.id}$_${$(this).parent().index()}`))
